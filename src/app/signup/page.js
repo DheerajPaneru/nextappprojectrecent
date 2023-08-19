@@ -1,4 +1,4 @@
-
+"use client"
 import React, { useState } from 'react'
 import "./signup.css"
 import { useRouter } from 'next/navigation'
