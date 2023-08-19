@@ -1,0 +1,22 @@
+"use client"
+import React from 'react'
+import Link from 'next/link'
+import  styles from "./page.module.css"
+import { useRouter } from 'next/navigation'
+const page = () => {
+  const router =useRouter();
+  return (
+    <main className={styles.main}>
+  <h1>kkkkjkjeee</h1>
+  <User data={345}/>
+  <button onClick={()=>alert("test")}>test</button>
+  <Link href="/login">Go to login Page </Link>
+<button onClick={()=>router.push("/login")}>Go to Login Page by Button</button>
+    </main>
+  )
+}
+const User=({data})=>{
+  return data
+}
+
+export default page
