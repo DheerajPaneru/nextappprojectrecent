@@ -1,10 +1,17 @@
 "use client"
 import React, { useState } from 'react'
 import "./signup.css"
+import { useAuth } from '../context/page'
 import { useRouter } from 'next/navigation'
 const page = () => {
   const router =useRouter();
-  const [data,setdata]=useState("")
+  const { login } = useAuth();
+  const [credentials, setCredentials] = useState({ username: '', password: '' });
+  const handleLogin = () => {
+    // Simulate a login request to a server
+    // In a real app, this would be an API call
+    login(credentials);
+  };
   return (
     <div className='bodysignup'>
 
@@ -49,14 +56,15 @@ const page = () => {
         <h2>Sign In</h2>
         <div className="form">
           <div className="inputBox">
-            <input type="text" required="" /> <i>Username</i>
+            <input type="text" required="" onChange={(e) => setCredentials({ ...credentials, username: e.target.value })} /> <i>Username</i>
           </div>
           <div className="inputBox">
-            <input type="password" required="" onChange={(e)=>setdata(e.target.value)} /> <i>Password</i>
+            <input type="password" required="" onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}/> <i>Password</i>
           </div>
           <div className="inputBox" onClick={()=>{ 
-            if(data.length>4){
-            
+            if(credentials.username.length>2)
+            {
+                            login(credentials)
             router.push("/about")}
             else{
               alert("please fill all field and password should me more than four character")
