@@ -3,7 +3,6 @@ import React, {useEffect,useState} from 'react'
 import "./about.css"
 import { useAuth } from '../context/page'
 const page = () => {
-  const { user, logout } = useAuth();
   const [data, setdata] = useState([])
   const [loading, setLoading] = useState(false);
   const fetchnews = async () => {
