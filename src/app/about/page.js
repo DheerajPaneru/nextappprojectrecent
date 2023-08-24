@@ -31,10 +31,6 @@ setLoading(true)
   useEffect(() => {
    fetchnews()
   }, [])
-  console.log(user, "ghjkiop")
-  console.log(data, "aswert")
-
-
   useEffect(() => {
     const handleScroll = () => {
       if (
