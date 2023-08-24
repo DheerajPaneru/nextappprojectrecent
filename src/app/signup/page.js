@@ -7,17 +7,9 @@ const page = () => {
   const router =useRouter();
   const { login } = useAuth();
   const [credentials, setCredentials] = useState({ username: '', password: '' });
-  const handleLogin = () => {
-    // Simulate a login request to a server
-    // In a real app, this would be an API call
-    login(credentials);
-  };
   return (
     <div className='bodysignup'>
-
-
   <section>
-   
     <span /> <span /> <span /> <span /> <span /> <span /> <span /> <span />{" "}
     <span /> <span /> <span /> <span /> <span /> <span /> <span /> <span />{" "}
     <span /> <span /> <span /> <span /> <span /> <span /> <span /> <span />{" "}

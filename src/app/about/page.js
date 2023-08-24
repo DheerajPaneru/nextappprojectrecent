@@ -1,19 +1,14 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, {useEffect,useState} from 'react'
 import "./about.css"
 import { useAuth } from '../context/page'
-import { useRouter } from 'next/navigation'
 const page = () => {
   const { user, logout } = useAuth();
   const [data, setdata] = useState([])
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
-  //  router.push("/about")
   const fetchnews = async () => {
 setLoading(true)
     try {
-
-
       const x = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=9")
       const p = await x.json()
       console.log(p)
@@ -58,7 +53,7 @@ setLoading(true)
         <div className="row" style={{flexDirection:"column"}}>
 
 
-          {data && data.map((c, id) => {
+          {data && data.map((c) => {
             return (
               <>
 
