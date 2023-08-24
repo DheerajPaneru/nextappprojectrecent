@@ -52,9 +52,9 @@ setLoading(true)
         <div className="row" style={{flexDirection:"column"}}>
 
 
-          {data && data.map((c) => {
+          {data && data.map((c,id) => {
             return (
-              <>
+              <div key={id}>
 
                 <div className="card" style={{ marginRight: 5 }}>
                   <div className="card-header">
@@ -75,7 +75,7 @@ setLoading(true)
                 </div>
 
 
-              </>
+              </div>
             )
 
           })}
