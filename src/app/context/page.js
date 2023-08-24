@@ -1,4 +1,3 @@
-// context/AuthContext.js
 "use client"
 import { createContext, useState, useContext, useEffect } from 'react';
 
@@ -8,7 +7,6 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Check local storage for user data
     const storedUser = JSON.parse(localStorage.getItem('user'));
     if (storedUser) {
       setUser(storedUser);
