@@ -1,6 +1,5 @@
-
+"use client"
 import { Inter } from 'next/font/google'
-import { AuthProvider } from './context/page'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -12,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-<AuthProvider>{children} </AuthProvider>
+{children} 
   </body>
     </html>
   )

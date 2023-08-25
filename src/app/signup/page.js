@@ -1,11 +1,9 @@
 "use client"
 import React, { useState } from 'react'
 import "./signup.css"
-import { useAuth } from '../context/page'
 import { useRouter } from 'next/navigation'
 const page = () => {
   const router =useRouter();
-  const { login } = useAuth();
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   return (
     <div className='bodysignup'>
@@ -56,7 +54,6 @@ const page = () => {
           <div className="inputBox" onClick={()=>{ 
             if(credentials.username.length>2)
             {
-                            login(credentials)
             router.push("/about")}
             else{
               alert("please fill all field and password should me more than four character")
